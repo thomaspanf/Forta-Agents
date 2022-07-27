@@ -1,12 +1,14 @@
 {
-  "name": "forta-agent-starter",
+  "name": "set-masterchef-settings-bot",
   "version": "0.0.1",
-  "description": "Forta Agent Typescript starter project",
+  "description": "Detects function calls that modify settings in the Masterchef contract",
   "chainIds": [
+    56,
     97
   ],
   "scripts": {
     "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\"",
     "start": "npm run start:dev",
     "start:dev": "nodemon --watch src --watch forta.config.json -e js,ts,json  --exec \"npm run build && forta-agent run\"",
     "start:prod": "forta-agent run --prod",
