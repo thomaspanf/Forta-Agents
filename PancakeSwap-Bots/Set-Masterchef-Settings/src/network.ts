@@ -1,30 +1,31 @@
+
 interface NetworkData {
   masterChef: string;
+  num: number; 
 }
 
-const BSC_MAINNET_DATA: NetworkData = {
-  masterChef: "0x73feaa1eE314F8c655E354234017bE2193C9E24E",
-};
-
-//PoC
-const BSC_TESTNET_DATA: NetworkData = {
-  masterChef: "0xbD315DA028B586f7cD93903498e671fA3efeF506",
-};
-
-const NETWORK_MAP: Record<number, NetworkData> = {
-  56: BSC_MAINNET_DATA,
-  97: BSC_TESTNET_DATA,
+const data: Record<number, NetworkData> = {
+  56:{
+    masterChef: "0x73feaa1eE314F8c655E354234017bE2193C9E24E",
+    num: 1,
+  },
+  97:{
+    masterChef: "0xbD315DA028B586f7cD93903498e671fA3efeF506", 
+    num: 2, 
+  },
 };
 
 export default class NetworkManager implements NetworkData {
   public masterChef: string;
+  public num: number; 
 
   constructor() {
     this.masterChef = "";
+    this.num = 0; 
   }
 
   public setNetwork(networkId: number) {
-    const { masterChef } = NETWORK_MAP[networkId];
+    const { masterChef } = data[networkId];
     this.masterChef = masterChef;
   }
 }

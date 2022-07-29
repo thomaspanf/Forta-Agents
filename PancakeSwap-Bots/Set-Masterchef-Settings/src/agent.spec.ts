@@ -87,6 +87,7 @@ describe("Set Masterchef Settings bot test suite", () => {
   const mockNetworkManager: NetworkManager = {
     masterChef: testMasterchef,
     setNetwork: jest.fn(),
+    num: 0,
   };
 
   const handleTx: HandleTransaction = handleTransaction(mockNetworkManager as any);
